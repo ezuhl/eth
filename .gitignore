@@ -1,1 +1,4 @@
 e/src/github.com/eth/env/
+
+/env/.env
+/.idea
