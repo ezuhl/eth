@@ -204,6 +204,10 @@ func (e *ethHandler) GetAverageHeight(w http.ResponseWriter, r *http.Request) {
 		//questions:
 		// this doesn't seem right to me.  I'm having trouble making the connection between slot and actual blocks added with this
 		//	endpoint.
+		// slots are not guaranteed to have a block submission.
+
+		// I could run a background process on a per minute basis to determine finalized slots but it I think i might need another endpoint
+
 	}
 
 	respBytes, err := json.Marshal(resp)
