@@ -16,7 +16,9 @@ import (
 func main() {
 
 	//load env vars
-	err := godotenv.Load("../../env/.env")
+	goPath := os.Getenv("GOPATH")
+	//load env vars
+	err := godotenv.Load(fmt.Sprintf("%s/src/github.com/ezuhl/eth/env/.env", goPath))
 	if err != nil {
 		log.Fatal("could not get environment with error ", err)
 	}
