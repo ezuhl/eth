@@ -40,6 +40,7 @@ func Db() (*sqlx.DB, error) {
 		return nil, errors.Wrap(err, "unable to open connection to postgres")
 	}
 
+	//run database migration
 	err = migratePg(db, database)
 	if err != nil {
 		log.Fatal("problem with migration: ", err)

@@ -21,6 +21,7 @@ type account struct {
 	Db *sqlx.DB
 }
 
+//data manager for users and api keys
 func NewAccount(db *sqlx.DB) Account {
 
 	a := &account{db}
@@ -33,10 +34,6 @@ func (a *account) GetUser(id int64) (user *model.User, err error) {
 
 	user = &model.User{}
 	err = a.Db.Get(user, "SELECT * FROM account.user WHERE user_id =$1", id)
-
-	//if err == sql.ErrNoRows{
-	//	return nil,nil
-	//}
 
 	return
 }

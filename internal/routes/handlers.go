@@ -5,6 +5,7 @@ import (
 	"net/http"
 )
 
+//setup expected interfaces for router
 type Handler interface {
 	SetAuthToken(*jwtauth.JWTAuth)
 	CreateAccount(w http.ResponseWriter, r *http.Request)

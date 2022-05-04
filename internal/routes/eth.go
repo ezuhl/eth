@@ -14,6 +14,7 @@ func init() {
 
 }
 
+//setup app and jwt token access
 func NewRoutes(app Handler) http.Handler {
 
 	app.SetAuthToken(tokenAuth)

@@ -41,7 +41,6 @@ func main() {
 
 	fullAddress := fmt.Sprintf("%s:%d", address, 8080)
 	// Run service
-
 	//start listening
 	log.Println("start listening on ", fullAddress)
 	if err = http.ListenAndServe(fullAddress, routes); err != nil {

@@ -1,8 +1,11 @@
 package data
 
 import (
+	"fmt"
 	"github.com/davidebianchi/go-jsonclient"
 	"github.com/ezuhl/eth/internal/data/model"
+	"github.com/joho/godotenv"
+	"os"
 	"testing"
 )
 
@@ -21,8 +24,13 @@ func Test_prysmClient_GetChainedHead(t *testing.T) {
 			name: "successful request",
 			fields: fields{
 				client: func() *jsonclient.Client {
+					goPath := os.Getenv("GOPATH")
+					//load env vars
+					err := godotenv.Load(fmt.Sprintf("%s/src/github.com/ezuhl/eth/env/.env", goPath))
+
+					hostPath := os.Getenv("PRYSM_JSON_HOST")
 					opts := jsonclient.Options{
-						BaseURL: "http://3.70.154.20:3500/eth/v1alpha1/",
+						BaseURL: hostPath,
 					}
 					client, err := jsonclient.New(opts)
 					if err != nil {

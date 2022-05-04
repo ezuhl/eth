@@ -1,5 +1,6 @@
 package handlers
 
+//request structs for http req and responses
 type CreateAccountRequest struct {
 	Username string `json:"username"`
 	Password string `json:"password"`

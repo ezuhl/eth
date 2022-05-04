@@ -31,3 +31,7 @@ Startup:
 - go run ./cmd/postgres/main.go [start postgres]
 - go run ./cmd/eth/main.go [start app]
 - use Postman to make requests
+
+
+Db Migration:
+- A database migration will run when you run the app.  Make sure nothing, other than EthPostgress instance, is license on the Postgres port
