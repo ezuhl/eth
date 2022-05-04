@@ -27,6 +27,7 @@ Api
 
 
 Startup:
+- Check out code to $GOPATH/src/github.com/ezuhl
 - Get .env file for settings and place in /env folder
 - go run ./cmd/postgres/main.go [start postgres]
 - go run ./cmd/eth/main.go [start app]
