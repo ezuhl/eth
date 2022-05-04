@@ -4,9 +4,9 @@ Eth user app
 
 This is a demo app that:
 
-- Create user and returns a jwt
-- Creates api token
-- Uses that api token to get average head block rate per minute from  beacon node
+- Creates a user and returns a jwt
+- Creates api key
+- Uses that api token to get average head block rate per minute from beacon node
 
 
 Api
