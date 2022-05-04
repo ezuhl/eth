@@ -193,12 +193,17 @@ func (e *ethHandler) GetAverageHeight(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
+
+	//amount of
 	head, _ := chainHead.GetHeadSlot()
 	finalized, _ := chainHead.GetFinalizedSlot()
-	if finalized > 0 {
-		secDifference := (head - finalized) * 12
-		minuteRate := secDifference / 60 //
-		resp.BlocksPerMinuteAVG = minuteRate
+	if head > 0 && finalized > 0 {
+		secDifference := (head - finalized) * 12 //slot difference between add slots and finalize * 12 (1 slot is 12 seconds)
+		minuteRate := secDifference / 60         //divide difference time by 1 minute
+		resp.BlocksPerMinuteAVG = minuteRate     // the difference between what is finalized and new slots
+		//questions:
+		// this doesn't seem right to me.  I'm having trouble making the connection between slot and actual blocks added with this
+		//	endpoint.
 	}
 
 	respBytes, err := json.Marshal(resp)
