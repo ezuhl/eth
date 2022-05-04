@@ -2,7 +2,7 @@ package data
 
 import (
 	"context"
-	"github.com/eth/internal/data/model"
+	"github.com/ezuhl/eth/internal/data/model"
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
 )

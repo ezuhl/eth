@@ -3,7 +3,7 @@ package data
 import (
 	"context"
 	"github.com/davidebianchi/go-jsonclient"
-	"github.com/eth/internal/data/model"
+	"github.com/ezuhl/eth/internal/data/model"
 	"github.com/pkg/errors"
 	"net/http"
 	"os"

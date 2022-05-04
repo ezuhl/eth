@@ -3,9 +3,9 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/eth/internal/data"
-	"github.com/eth/internal/data/model"
-	"github.com/eth/internal/routes"
+	"github.com/ezuhl/eth/internal/data"
+	"github.com/ezuhl/eth/internal/data/model"
+	"github.com/ezuhl/eth/internal/routes"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/jwtauth/v5"
 	"github.com/jmoiron/sqlx"

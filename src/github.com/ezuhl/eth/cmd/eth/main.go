@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	address2 "github.com/eth/internal/address"
-	"github.com/eth/internal/data"
-	"github.com/eth/internal/handlers"
-	routes2 "github.com/eth/internal/routes"
+	address2 "github.com/ezuhl/eth/internal/address"
+	"github.com/ezuhl/eth/internal/data"
+	"github.com/ezuhl/eth/internal/handlers"
+	routes2 "github.com/ezuhl/eth/internal/routes"
 	"github.com/joho/godotenv"
 	"github.com/pkg/errors"
 	"log"
