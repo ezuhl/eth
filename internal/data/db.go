@@ -53,7 +53,8 @@ func migratePg(db *sqlx.DB, dbname string) error {
 	path := os.Getenv("POSTGRES_MIGRATION_PATH")
 	schema := os.Getenv("POSTGRES_MIGRATION_SCHEMA")
 	table := os.Getenv("POSTGRES_MIGRATION_TABLE")
-
+	goPath := os.Getenv("GOPATH")
+	path = fmt.Sprintf("%s/src/github.com/ezuhl/eth/%s", goPath, path)
 	migrationConfig := &postgres.Config{MigrationsTable: table, DatabaseName: dbname, SchemaName: schema}
 	err := MigratePgSchema(db, path, migrationConfig)
 	// check result

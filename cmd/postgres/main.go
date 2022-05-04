@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	datapath      = "./data"
+	datapath      = "data"
 	containername = "ethpostgres"
 	port          = "5432"
 	pass          = "secretpassword"
@@ -77,9 +77,12 @@ func Deploy() error {
 			},
 		},
 	}
+	goPath := os.Getenv("GOPATH")
+
+	dataDirPath := fmt.Sprintf("%s/src/github.com/ezuhl/eth/cmd/postgres/%s", goPath, datapath)
 	resp, err := cli.ContainerCreate(ctx, &container.Config{
 		Image:        "postgres",
-		Volumes:      map[string]struct{}{fmt.Sprintf("%s:/var/lib/postgresql/data", datapath): struct{}{}},
+		Volumes:      map[string]struct{}{fmt.Sprintf("%s:/var/lib/postgresql/data", dataDirPath): struct{}{}},
 		Env:          []string{fmt.Sprintf("POSTGRES_PASSWORD=%s", pass)},
 		ExposedPorts: nat.PortSet{nat.Port(natPort): struct{}{}},
 	}, hostConfig, nil, nil, containername)
