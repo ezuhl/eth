@@ -27,7 +27,7 @@ Api
 
 
 Startup:
-- Get .env file for settings
+- Get .env file for settings and place in /env folder
 - go run ./cmd/postgres/main.go [start postgres]
 - go run ./cmd/eth/main.go [start app]
 - use Postman to make requests
